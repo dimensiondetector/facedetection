@@ -30,8 +30,10 @@ public class FaceDetector {
 //        MatOfRect faceDetections = new MatOfRect();
         CascadeClassifier faceDetector = new CascadeClassifier();
        faceDetector.load("C:/opencv-3.2.0-vc14/opencv/sources/data/haarcascades/haarcascade_frontalface_alt.xml");
-        Mat image = Imgcodecs.imread("C:/Users/SHEETHAL/Documents/Sheethal/sjsu/SPRING2017/SE195A(srproject)/faceDetection/IMG_2990.jpg");
-        MatOfRect faceDetections = new MatOfRect();
+        //Mat image = Imgcodecs.imread("C:/Users/SHEETHAL/Documents/Sheethal/sjsu/SPRING2017/SE195A(srproject)/faceDetection/IMG_2990.jpg");
+       Mat image = Imgcodecs.imread("https://s-media-cache-ak0.pinimg.com/564x/b1/b5/36/b1b5361766a5335364d91bb66f4c41fd.jpg");
+ 
+       MatOfRect faceDetections = new MatOfRect();
         faceDetector.detectMultiScale(image, faceDetections);
  
         System.out.println(String.format("Detected %s faces", faceDetections.toArray().length));
